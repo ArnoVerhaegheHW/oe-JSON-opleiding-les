@@ -1,0 +1,27 @@
+#divContainer {
+      width: 800px;
+      border: tomato 5px solid;
+      background-color: lightcyan;
+      padding: 10px;
+}
+
+#divNav {
+      height: 272px;
+}
+
+#divAdd {
+            clear: both;
+}
+
+#divEdit {
+
+      border: blue 5px solid;
+      border-radius: 15px;
+      background-color: lightcyan;
+      padding: 10px;
+      margin-top: 10px;
+}
+
+#divButtons {
+      margin-top : 10px;
+}

@@ -1,0 +1,62 @@
+{
+	"App Development": {
+		"Pic": "appdev.png",
+		"Modules": [{
+				"Module": "Programming Basics",
+				"Studiepunten": 6,
+				"Lectoren": ["DBOOD", "DDEUJ", "VCAES"],
+				"Semester": 1
+			},
+			{
+				"Module": "Programming Advanced",
+				"Studiepunten": 3,
+				"Lectoren": ["DBOOD", "MOURD", "VCAES"],
+				"Semester": 1
+			},
+			{
+				"Module": "Programming Expert",
+				"Studiepunten": 6,
+				"Lectoren": ["DBOOD", "MOURD", "COOLK"],
+				"Semester": 2
+			},
+			{
+				"Module": "Mobile Development",
+				"Studiepunten": 9,
+				"Lectoren": ["DDEYS", "LESYM"],
+				"Semester": 3
+			}
+		]
+	},
+	"Web Development": {
+		"Pic": "webdev.png",
+		"Modules": [{
+				"Module": "Web Frontend Basics",
+				"Studiepunten": 6,
+				"Lectoren": ["DBOOD", "DMARM", "FRANJ", "SOETB"],
+				"Semester": 1
+			},
+			{
+				"Module": "Web Frontend Advanced",
+				"Studiepunten": 3,
+				"Lectoren": ["COOLK", "MOURD", "SOURO"],
+				"Semester": 2
+			}
+		]
+	},
+	"Infrastructure": {
+		"Pic": "infrastructure.png",
+		"Modules": [{
+				"Module": "Databases",
+				"Studiepunten": 6,
+				"Lectoren": ["ROELK", "SOETB"],
+				"Semester": 1
+			},
+			{
+				"Module": "Basic IT Skills",
+				"Studiepunten": 3,
+				"Lectoren": ["COOLK", "DDEUJ"],
+				"Semester": 1
+			}
+		]
+	}
+}

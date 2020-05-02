@@ -1,0 +1,41 @@
+.logo {
+      text-align: center;
+      display: inline-block;
+}
+
+.moduleInfo {
+      clear: both;
+      border: green solid 4px;
+      width: 27%;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 15px;
+      height: 210px;
+      position: relative;
+      top:5px;
+      vertical-align: top;
+      cursor: pointer;
+}
+
+.chkLabel {
+      margin-left: 2px;
+      margin-right: 22px;
+      font-size: 1.2em;
+      width: 250px;
+}
+
+.hidden {
+      display: none;
+}
+
+.lblLabelForInput {
+      width: 120px;
+      display: inline-block;
+}
+
+.spnTotaalStudiepunten {
+      margin-top: 10px;
+      display: inline-block;
+}
