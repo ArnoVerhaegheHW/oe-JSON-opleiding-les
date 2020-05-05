@@ -3,6 +3,8 @@
 const RdbSemesterNaam = 'rdbSemester';
 const ChkLectorenNaam = 'chkLectoren';
 
+var opleiding;
+
 var btnAdd, btnDelete, btnSave;
 var divButtons, divContainer, divEdit, divModus, divNav, divShow;
 
@@ -10,9 +12,30 @@ window.addEventListener('load', Initieer);
 
 function Initieer() {
 	KoppelElementen();
-	KoppelEvents();
-
+      KoppelEvents();
+      LeesJSON();
+      GeefStartSituatie();
 };
+
+const GeefStartSituatie = () => {
+      divShow.classList.add('hidden');
+      divEdit.classList.add('hidden');
+      divButtons.classList.add('hidden');
+      divNav.innerHTML = "";
+}
+
+const LeesJSON = () => {
+      let pad = 'js/opleiding.json';
+      (async () => {
+            opleiding = await(GetJSON(pad));
+            console.log(opleiding);
+            ToonOpleiding();
+      })()
+}
+
+const ToonOpleiding = () => {
+
+}
 
 const KoppelElementen = () => {
 btnAdd = document.getElementById("btnAdd");
