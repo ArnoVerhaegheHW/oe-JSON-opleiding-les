@@ -4,6 +4,7 @@ const RdbSemesterNaam = 'rdbSemester';
 const ChkLectorenNaam = 'chkLectoren';
 
 var opleiding;
+var huidigOnderdeel;
 
 var btnAdd, btnDelete, btnSave;
 var divButtons, divContainer, divEdit, divModus, divNav, divShow;
@@ -47,7 +48,21 @@ const MaakOnderdeelNav = (onderdeelNaam) => {
       figNavBulb.innerHTML =`<h2>${onderdeelNaam}</h2>`;
       figNavBulb.innerHTML += logo;
       figNavBulb.innerHTML += `<span class="spnTotaalStudiepunten">Studiepunten: ${totaalAantalStudiepunten}</span>`;
+      figNavBulb.addEventListener('click', () => {
+            let modules = onderdeelInfo.Modules;
+            huidigOnderdeel = onderdeelNaam;
+            ToonDetails(modules);
+      })
       divNav.appendChild(figNavBulb);
+}
+
+const ToonDetails = (modules) => {
+      divShow.innerHTML = "";
+      divEdit.innerHTML = "";
+
+      divShow.classList.remove('hidden');
+      divEdit.classList.add('hidden');
+      divButtons.classList.add('hidden');
 }
 
 const GeefTotaalAantalStudiePunten = (onderdeelInfo) => {
