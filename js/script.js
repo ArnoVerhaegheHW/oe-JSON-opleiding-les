@@ -34,7 +34,20 @@ const LeesJSON = () => {
 }
 
 const ToonOpleiding = () => {
+      for (const key in opleiding) {
+            MaakOnderdeelNav(key);
+      }
+}
 
+const MaakOnderdeelNav = (onderdeelNaam) => {
+      let opleidingsInfo = opleiding[onderdeelNaam];
+      let totaalAantalStudiepunten = 0;
+      let logo = `<img src="img/${opleidingsInfo.Pic}" alt="logo ${onderdeelNaam}" width="100px" class="logo"/>`;
+      let figNavBulb = document.createElement('figure');
+      figNavBulb.innerHTML =`<h2>${onderdeelNaam}</h2>`;
+      figNavBulb.innerHTML += logo;
+      figNavBulb.innerHTML += `<span class="spnTotaalStudiepunten">Studiepunten: ${totaalAantalStudiepunten}</span>`;
+      divNav.appendChild(figNavBulb);
 }
 
 const KoppelElementen = () => {
