@@ -40,14 +40,24 @@ const ToonOpleiding = () => {
 }
 
 const MaakOnderdeelNav = (onderdeelNaam) => {
-      let opleidingsInfo = opleiding[onderdeelNaam];
-      let totaalAantalStudiepunten = 0;
-      let logo = `<img src="img/${opleidingsInfo.Pic}" alt="logo ${onderdeelNaam}" width="100px" class="logo"/>`;
+      let onderdeelInfo = opleiding[onderdeelNaam];
+      let totaalAantalStudiepunten = GeefTotaalAantalStudiePunten(onderdeelInfo);
+      let logo = `<img src="img/${onderdeelInfo.Pic}" alt="logo ${onderdeelNaam}" width="100px" class="logo"/>`;
       let figNavBulb = document.createElement('figure');
       figNavBulb.innerHTML =`<h2>${onderdeelNaam}</h2>`;
       figNavBulb.innerHTML += logo;
       figNavBulb.innerHTML += `<span class="spnTotaalStudiepunten">Studiepunten: ${totaalAantalStudiepunten}</span>`;
       divNav.appendChild(figNavBulb);
+}
+
+const GeefTotaalAantalStudiePunten = (onderdeelInfo) => {
+      let modules = onderdeelInfo.Modules;
+      let totaal = 0;
+      modules.forEach(module => {
+            let studiepunten = module.Studiepunten;
+            totaal += studiepunten;
+      });
+      return totaal;
 }
 
 const KoppelElementen = () => {
