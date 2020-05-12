@@ -150,7 +150,11 @@ divShow = document.getElementById("divShow");
 
 const KoppelEvents = () => {
 	btnAdd.addEventListener('click', () => {
-                        
+                        MaakInputOngedaan(divEdit);
+                        txtModuleNaam.focus();
+                        txtStudiePunten.value = 3;
+                        MarkeerRadioButton(RdbSemesterNaam, 1);
+                        indexHuidigeModule= opleiding[huidigOnderdeel].Modules.length;
 	});
 	btnDelete.addEventListener('click', () => {
                         
