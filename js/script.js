@@ -109,8 +109,12 @@ const MaakFormulierElementen = (index) => {
 
       divEdit.appendChild(GeefInputMetLabel("Modulenaam: ", inputModuleNaam, "formCombi"));
       divEdit.appendChild(GeefInputMetLabel("Studiepunten: ", inputStudiePunten, "formCombi"));
+      
       divEdit.appendChild(chkLectoren);
+      divEdit.appendChild(GeefRadioButtons("Semester", [1,2,3,4], RdbSemesterNaam));
 
+      ToonKeuzeCheckboxen(gekozenLectoren, ChkLectorenNaam);
+      MarkeerRadioButton(RdbSemesterNaam, semester);
 }
 
 const GeefTotaalAantalStudiePunten = (onderdeelInfo) => {
