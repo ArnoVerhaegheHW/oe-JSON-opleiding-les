@@ -9,6 +9,7 @@ const ChkLectorenNaam = 'chkLectoren';
 
 var opleiding;
 var huidigOnderdeel;
+var indexHuidigeModule;
 
 var btnAdd, btnDelete, btnSave;
 var divButtons, divContainer, divEdit, divModus, divNav, divShow;
@@ -84,10 +85,19 @@ const ToonDetails = (modules) => {
             divModule.id = index;
             divModule.innerHTML = samenvatting;
             divModule.addEventListener('click', () => {
-
+                  //Maak formulier voor edit
+                  indexHuidigeModule = divModule.id;
+                  MaakFormulierElementen(indexHuidigeModule);
+                  //Toon div voor edit en buttons
+                  divEdit.classList.remove('hidden');
+                  divButtons.classList.remove('hidden');
             });
             divShow.appendChild(divModule);
       }
+}
+
+const MaakFormulierElementen = (index) => {
+
 }
 
 const GeefTotaalAantalStudiePunten = (onderdeelInfo) => {
