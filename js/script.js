@@ -157,7 +157,9 @@ const KoppelEvents = () => {
                         indexHuidigeModule= opleiding[huidigOnderdeel].Modules.length;
 	});
 	btnDelete.addEventListener('click', () => {
-                        
+               opleiding[huidigOnderdeel].Modules.splice(indexHuidigeModule, 1);
+               GeefStartSituatie();
+               ToonOpleiding(opleiding) ;        
 	});
 	btnSave.addEventListener('click', () => {
                         
