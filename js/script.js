@@ -34,7 +34,7 @@ const LeesJSON = () => {
       let pad = 'js/opleiding.json';
       (async () => {
             opleiding = await(GetJSON(pad));
-            console.log(opleiding);
+            //console.log(opleiding);
             ToonOpleiding();
       })()
 }
@@ -71,7 +71,7 @@ const ToonDetails = (modules) => {
 
       for (let index = 0; index < modules.length; index++) {
             const module = modules[index];
-            console.log('Module: ' + module);
+            //console.log('Module: ' + module);
             let divModule = document.createElement('div');
             let moduleNaam = module.Module;
             let studiepunten = module.Studiepunten;
@@ -148,6 +148,16 @@ divShow = document.getElementById("divShow");
 
 }
 
+const GeefInvoer = () => {
+      let userInput = GeefInvoerInput();
+      let semester = GeefValueGekozenRadioButton(RdbSemesterNaam);
+      let gekozenLectoren = GeefGekozenValuesCheckBoxes(ChkLectorenNaam);
+      userInput["Semester"]=parseInt(semester);
+      userInput["Lectoren"]= gekozenLectoren;
+      console.log('userInput: ' + JSON.stringify(userInput));
+      return userInput;
+}
+
 const KoppelEvents = () => {
 	btnAdd.addEventListener('click', () => {
                         MaakInputOngedaan(divEdit);
@@ -162,6 +172,9 @@ const KoppelEvents = () => {
                ToonOpleiding(opleiding) ;        
 	});
 	btnSave.addEventListener('click', () => {
-                        
+            let newModule = GeefInvoer();
+            opleiding[huidigOnderdeel].Modules[indexHuidigeModule] = newModule;
+            GeefStartSituatie();
+            ToonOpleiding(opleiding);
 	});
 }
