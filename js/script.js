@@ -97,6 +97,19 @@ const ToonDetails = (modules) => {
 }
 
 const MaakFormulierElementen = (index) => {
+      divEdit.innerHTML = "";
+      let module = opleiding[huidigOnderdeel].Modules[index];
+      let moduleNaam = module.Module;
+      let studiepunten = module.Studiepunten;
+      let gekozenLectoren = module.Lectoren;
+      let semester = module.Semester;
+      let chkLectoren = GeefCheckboxen("Lectoren", lectoren, ChkLectorenNaam, false);
+      let inputModuleNaam = GeefInputElement("txtModuleNaam", moduleNaam, "text", "Module")
+      let inputStudiePunten = GeefInputElement("txtStudiePunten", studiepunten, "number", "Studiepunten");
+
+      divEdit.appendChild(GeefInputMetLabel("Modulenaam: ", inputModuleNaam, "formCombi"));
+      divEdit.appendChild(GeefInputMetLabel("Studiepunten: ", inputStudiePunten, "formCombi"));
+      divEdit.appendChild(chkLectoren);
 
 }
 
