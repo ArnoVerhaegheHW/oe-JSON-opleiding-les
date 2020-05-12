@@ -1,5 +1,9 @@
 "use strict";
 
+/*
+Next step: ToonDetails
+*/
+
 const RdbSemesterNaam = 'rdbSemester';
 const ChkLectorenNaam = 'chkLectoren';
 
@@ -63,6 +67,27 @@ const ToonDetails = (modules) => {
       divShow.classList.remove('hidden');
       divEdit.classList.add('hidden');
       divButtons.classList.add('hidden');
+
+      for (let index = 0; index < modules.length; index++) {
+            const module = modules[index];
+            console.log('Module: ' + module);
+            let divModule = document.createElement('div');
+            let moduleNaam = module.Module;
+            let studiepunten = module.Studiepunten;
+            let lectoren = module.Lectoren.join(" - ");
+            let semester = module.Semester;
+            let samenvatting = `<h4>${moduleNaam}</h4>
+                              ${studiepunten} studiepunten<br /><br / >
+                              Semester: ${semester}<br /><br / >
+                              <b>Lectoren:</b>${lectoren}`;
+            divModule.className = 'moduleInfo';
+            divModule.id = index;
+            divModule.innerHTML = samenvatting;
+            divModule.addEventListener('click', () => {
+
+            });
+            divShow.appendChild(divModule);
+      }
 }
 
 const GeefTotaalAantalStudiePunten = (onderdeelInfo) => {
